@@ -5,6 +5,8 @@ XRAY_NAME := xray-linux-mipsle
 XRAY_URL := $(XRAY_URL_BASE)/$(XRAY_NAME).tar.gz
 
 CERT_FILE := https://curl.se/ca/cacert.pem
+GEOIP_FILE := https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geoip.dat
+GEOSITE_FILE := https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat
 
 all: download_test extra_test
 	@echo "xray build done!"
@@ -13,6 +15,8 @@ download_test:
 	( if [ ! -f $(XRAY_NAME).tar.gz ]; then \
 		wget -t5 --timeout=20 --no-check-certificate -O $(XRAY_NAME).tar.gz $(XRAY_URL); \
 		wget -t5 --timeout=20 --no-check-certificate $(CERT_FILE); \
+		wget -t5 --timeout=20 --no-check-certificate $(GEOIP_FILE); \
+		wget -t5 --timeout=20 --no-check-certificate $(GEOSITE_FILE); \
 	fi )
 
 extra_test:
@@ -28,5 +32,7 @@ clean:
 romfs:
 ifeq ($(CONFIG_FIRMWARE_INCLUDE_XRAY),y)
 	$(ROMFSINST) -p +x $(THISDIR)/xray /usr/bin/xray
+	$(ROMFSINST) -p +x $(THISDIR)/geoip.dat /usr/bin/geoip.dat
+	$(ROMFSINST) -p +x $(THISDIR)/geosite.dat /usr/bin/geosite.dat
 	$(ROMFSINST) -p -x $(THISDIR)/cacert.pem /usr/lib/cacert.pem
 endif
