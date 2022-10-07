@@ -13,8 +13,6 @@ download_test:
 	( if [ ! -f $(XRAY_NAME).tar.gz ]; then \
 		wget -t5 --timeout=20 --no-check-certificate -O $(XRAY_NAME).tar.gz $(XRAY_URL); \
 		wget -t5 --timeout=20 --no-check-certificate $(CERT_FILE); \
-		wget -t5 --timeout=20 --no-check-certificate $(GEOIP_FILE); \
-		wget -t5 --timeout=20 --no-check-certificate $(GEOSITE_FILE); \
 	fi )
 
 extra_test:
