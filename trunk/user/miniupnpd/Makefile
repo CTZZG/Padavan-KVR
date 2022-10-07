@@ -21,3 +21,4 @@ clean:
 romfs:
 	cp $(SRC_NAME)/miniupnpd .
 	$(ROMFSINST) /usr/bin/miniupnpd
+
