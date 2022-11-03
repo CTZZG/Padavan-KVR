@@ -23,7 +23,7 @@ extra_test:
 	fi )
 
 clean:
-	rm -rf $(NAIVE_NAME).tar.xz
+	rm -rf $(NAIVE_NAME).tar.xz $(NAIVE_NAME)
 
 romfs:
 ifeq ($(CONFIG_FIRMWARE_INCLUDE_XRAY),y)
