@@ -1,7 +1,8 @@
 THISDIR := $(shell pwd)
-NAIVE_URL_BASE := https://github.com/klzgrad/naiveproxy/releases/download/v106.0.5249.91-3/
+NAIVE_TAG := v106.0.5249.91-3
+NAIVE_URL_BASE := https://github.com/klzgrad/naiveproxy/releases/download/$(NAIVE_TAG)/
 
-NAIVE_NAME := naiveproxy-v106.0.5249.91-3-openwrt-mipsel_24kc-static
+NAIVE_NAME := naiveproxy-$(NAIVE_TAG)-openwrt-mipsel_24kc-static
 NAIVE_URL := $(NAIVE_URL_BASE)/$(NAIVE_NAME).tar.xz
 
 CERT_FILE := https://curl.se/ca/cacert.pem
