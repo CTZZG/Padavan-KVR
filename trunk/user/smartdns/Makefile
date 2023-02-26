@@ -1,4 +1,4 @@
-SRC_NAME = smartdns-Release38.1
+SRC_NAME = smartdns-Release41-RC3.tar.gz
 THISDIR = $(shell pwd)
 
 all: extract_test config_test
