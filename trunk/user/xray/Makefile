@@ -1,5 +1,5 @@
 THISDIR := $(shell pwd)
-NAIVE_TAG := v124.0.6367.54-2
+NAIVE_TAG := 126.0.6478.40-1
 NAIVE_URL_BASE := https://github.com/klzgrad/naiveproxy/releases/download/$(NAIVE_TAG)/
 
 NAIVE_NAME := naiveproxy-$(NAIVE_TAG)-openwrt-mipsel_24kc-static
